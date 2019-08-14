@@ -9,7 +9,6 @@ $(document).ready(function(){
          targets: 0,
          render : function(data, type, row, meta){
             if(type === 'display'){
-              console.log('This is the data bit: '+data);
               let url = 'https://www.twilio.com/console/sms/logs/'+data;
                return $('<a>')
                   .attr('href', url)
@@ -31,8 +30,6 @@ $(document).ready(function(){
     var customerChannel = pusher.subscribe('message');
     customerChannel.bind('add', function(data) {
     var body = data.data;
-    //let url = 'https://www.twilio.com/console/sms/logs/'+body.sid;
-    //var newLink = $('<a href=#>'+body.sid+'</a>');
     dataTable.row.add([
         body.sid,
         body.direction,
@@ -46,9 +43,7 @@ $(document).ready(function(){
 
   $(document).bind('DOMSubtreeModified', function (){
     $('#dataTable tr').each(function () {
-      var td_value = $('td', this).eq(5).text();
-      //var tdData = $('td', this).eq(0).text();
-      //let url = 'https://www.twilio.com/console/sms/logs/'+tdData;     
+      var td_value = $('td', this).eq(5).text();    
         switch (td_value) {
           case 'undelivered':
             $(this).addClass('undeliver');
