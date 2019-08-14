@@ -35,8 +35,8 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
     });
 
     // Configure Pusher instance
-    const pusher = new Pusher('PUSHER APP KEY', {
-        cluster: 'PUSHER APP CLUSTER',
+    const pusher = new Pusher('6cd0f164f79e9f068deb', {
+        cluster: 'eu',
         encrypted: true
     });
 
