@@ -36,6 +36,7 @@ router.post('/status', function(req, res, next){
       //callback(null, null);
       res.status(200).send('Success');
     }
+    res.status(200).send('Success');
   }
   catch(err){
     console.log('This is the error with the status callback: '+err);
